@@ -1,0 +1,15 @@
+# DB
+db.sqlite3
+
+# VS Code
+.vscode
+
+# Migrations
+*/*/migrations/0*
+
+# Cache:
+*/*/__pycache__/
+__pycache__/
+
+# Media
+media/
