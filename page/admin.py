@@ -3,7 +3,7 @@ from django.contrib import admin
 from django.db import models
 from .models import Page, Carousel
 
-class PageModify(admin.ModelAdmin):
+class PageAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
     list_display = (
         'pk',
@@ -18,9 +18,19 @@ class PageModify(admin.ModelAdmin):
         'status',
     )
 
+class CarouselAdmin(admin.ModelAdmin):
+    list_display = [
+        'pk',
+        'title',
+        'cover_image',
+        'status',
+    ]
+    list_filter = ['status', ]
+    list_editable = list_filter
 
-admin.site.register(Page, PageModify)
-admin.site.register(Carousel)
+
+admin.site.register(Page, PageAdmin)
+admin.site.register(Carousel, CarouselAdmin)
 
 # M Db yapisi
 # V View / Control

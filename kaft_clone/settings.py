@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
 
     # Third Party Apps:
+    # django-extensions
 
     # My Apps:
     'cart',
@@ -145,4 +146,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 # python manage.py startapp page
 # python manage.py startapp product
 
-# Trello: Configure Template Folder
+
+"""
+TODO List:
+
+Trello yönetici :
+- carousel
+page
+product
+category
+order
+
+Trello kullanici:
+kullanici kaydi
+adres kaydi
+kredi karti islemi
+sipariş takibi
+
+
+cart -> items
+"""
