@@ -11,12 +11,12 @@ class PageModify(admin.ModelAdmin):
         'slug',
         'status',
         'updated_at',
-)
+    )
     list_filter = ('status',)
     list_editable = (
-        'status',
         'title',
-)
+        'status',
+    )
 
 
 admin.site.register(Page, PageModify)

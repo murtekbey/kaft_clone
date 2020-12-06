@@ -1,7 +1,8 @@
 from django.shortcuts import render
-
-# Create your views here.
+from .models import Carousel
 
 def index(request):
     context = dict()
-    return render(request, 'home/index.html', context)
+    context['images'] = Carousel.objects.filter(status="published")
+    # context['images'] = images
+    return render(request, 'home/index.html', context) 
