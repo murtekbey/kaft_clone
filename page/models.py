@@ -1,5 +1,8 @@
+from django.contrib.admin.sites import DefaultAdminSite
 from django.db import models
 from django.utils.text import slugify
+
+DEFAULT_STATUS = 'draft'
 
 STATUS = [
     # sol kısım dbye yazılacak olan
@@ -30,11 +33,33 @@ class Page(models.Model):
         )
     # status
     status = models.CharField(
-        default="draft",
+        default=DEFAULT_STATUS,
         choices=STATUS,
         max_length=10,
         )
     # created_at
     created_at = models.DateTimeField(auto_now_add=True)
     # updated_at
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Carousel(models.Model):
+    title = models.CharField(
+        max_length=200,
+        null=True,
+        blank=True,
+    )
+
+    status = models.CharField(
+        default=DEFAULT_STATUS,
+        choices=STATUS,
+        max_length=10,
+    )
+
+    cover_image = models.ImageField(
+        upload_to='carousel',
+        null=True,
+        blank=True,
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)

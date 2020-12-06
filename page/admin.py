@@ -1,7 +1,7 @@
 from page.models import Page
 from django.contrib import admin
 from django.db import models
-from .models import Page
+from .models import Page, Carousel
 
 class PageModify(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
@@ -20,6 +20,7 @@ class PageModify(admin.ModelAdmin):
 
 
 admin.site.register(Page, PageModify)
+admin.site.register(Carousel)
 
 # M Db yapisi
 # V View / Control
