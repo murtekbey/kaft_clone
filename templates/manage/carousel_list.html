@@ -17,7 +17,7 @@
 
                 <tbody>
                     {% for item in carousel %}
-                        <tr>
+                    <tr>
                         <th scope="row">{{ item.pk }} </th>
                         <td>{{ item.title }}</td>
                         <td>
@@ -27,11 +27,13 @@
                             Görsel Yok
                             {% endif %}
                         </td>
-                        <td><a href="#" class="btn btn-primary">Edit</a></td>
-                        </tr>
+                        <td>
+                            <a href="{% url 'carousel_update' item.pk %}" class="btn btn-primary">Edit</a>
+                        </td>
+                    </tr>
                     {% endfor %}
                 </tbody>
-                
+
             </table>
 
         </div>
