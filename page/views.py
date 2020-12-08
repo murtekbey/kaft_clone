@@ -3,7 +3,7 @@ from django.contrib import messages
 from .models import Carousel, Page
 from .forms import CarouselModelForm, PageModelForm
 from django.utils.text import slugify
-from django.contrib.admin.views.decorators import staff_member_required, 
+from django.contrib.admin.views.decorators import staff_member_required
 
 # User Viewing This:
 def index(request):
@@ -39,7 +39,7 @@ def page_create(request):
             item = form.save(commit=False)
             item.slug = slugify(item.title.replace('ı','i'))
             item.save()
-        messages.success(request, 'Birseyler eklendi')
+            messages.success(request, 'Birseyler eklendi')
     return render(request, 'manage/form.html', context)
 
 def page_update(request, pk):
@@ -96,7 +96,6 @@ def carousel_create(request):
         form = CarouselModelForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
-
-        messages.success(request, 'Birseyler eklendi ama ne oldu bilemiyorum')
+            messages.success(request, 'Birseyler eklendi ama ne oldu bilemiyorum')
 
     return render(request, 'manage/form.html', context)
