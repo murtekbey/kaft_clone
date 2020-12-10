@@ -5,17 +5,17 @@
 
 <div class="container mt-5">
     <div class="row">
-        <div class="col-sm-3">
-            {% include 'product/product.html'%}
-        </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html'%}
-        </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html'%}
-        </div>
-        <div class="col-sm-3">
-            {% include 'product/product.html'%}
+        <div class="col-sm-12 ">
+            <h2>{{ category.title }}</h2>
+            <div class="row">
+                {% for item in products %}
+                {% if item.cover_image %}
+                <div class="col-sm-4">
+                    {% include 'product/category_product.html'%}
+                </div>
+                {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
 </div>
@@ -24,6 +24,6 @@
 
 {% block script %}
 <script>
-$('.carousel').carousel()
+    $('.carousel').carousel()
 </script>
 {% endblock %}
