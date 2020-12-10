@@ -1,20 +1,23 @@
 from django.contrib import admin
 from .models import Category, Product
 
+
 class CategoryAdmin(admin.ModelAdmin):
-    prepopulated_fields = {"slug": ("title",)}
+    prepopulated_fields = {"slug": ("gender","title")}
     list_display = (
         'pk',
         'title',
         'slug',
+        'gender',
         'status',
         'updated_at',
     )
-    list_filter = ('status',)
+    list_filter = ('status', 'gender')
     list_editable = (
         'title',
         'status',
     )
+
 
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
@@ -32,6 +35,7 @@ class ProductAdmin(admin.ModelAdmin):
         'title',
         'status',
     )
+
 
 admin.site.register(Category, CategoryAdmin)
 admin.site.register(Product, ProductAdmin)

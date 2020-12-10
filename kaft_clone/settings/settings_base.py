@@ -98,8 +98,8 @@ TODO List:
 
 Trello yönetici :
 - carousel
-page
-product
+- page
+- product
 category
 order
 
