@@ -40,10 +40,7 @@ def manage_list(request):
     return render(request, 'manage/manage.html', context)
 
 # Admin Viewing This:
-
 # Page:
-
-
 @staff_member_required
 def page_list(request):
     context = dict()
