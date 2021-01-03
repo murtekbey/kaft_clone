@@ -1,8 +1,9 @@
 # DB
-db.sqlite3
+db.sqlite3/
 
 # VS Code
-.vscode
+.vscode/
+.vscode/*
 
 # Migrations
 */*/migrations/0*
@@ -10,6 +11,7 @@ db.sqlite3
 # Cache:
 */*/__pycache__/
 __pycache__/
+*.pyc
 
 # Media
 media/
