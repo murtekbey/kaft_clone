@@ -6,7 +6,8 @@ db.sqlite3/
 .vscode/*
 
 # Settings
-*/kaft_clone/settings*
+kaft_clone/settings/
+kaft_clone/settings/*
 
 # Migrations
 */*/migrations/0*
