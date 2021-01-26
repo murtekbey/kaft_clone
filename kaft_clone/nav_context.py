@@ -2,6 +2,7 @@ from product.models import Category
 from page.models import Page
 from page.views import STATUS
 
+# settings/settings_base.py dosyanın altındaki template kısmına context_processor olarak eklendi.
 def nav_data(request):
     context = dict()
 

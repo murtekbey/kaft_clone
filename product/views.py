@@ -7,7 +7,7 @@ def category_show(request, category_slug):
     context = dict()
     context['category'] = get_object_or_404(Category, slug=category_slug)
 
-    # # Nav:
+    # # Nav: // nav_context'e gönderdiğimiz için artık tüm sayfalarda kategorileri görebiliriz.
     # context['categories'] = Category.objects.filter(
     #     status=STATUS
     # ).order_by('title')
