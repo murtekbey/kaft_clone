@@ -29,12 +29,13 @@ def index(request):
     # ).order_by('title')
     return render(request, 'home/index.html', context)
 
-def page_show(request, slug):
+def page_show(request, page_slug):
     context = dict()
-    context['page'] = get_object_or_404(Page, slug=slug)
+    context['page'] = get_object_or_404(Page, slug=page_slug)
     return render(request, 'page/page.html', context)
 
 # Manage:
+@staff_member_required
 def manage_list(request):
     context = dict()
     return render(request, 'manage/manage.html', context)
@@ -44,10 +45,10 @@ def manage_list(request):
 @staff_member_required
 def page_list(request):
     context = dict()
-    context['items'] = Page.objects.all().order_by('-pk')
+    context['items'] = Page.objects.all().order_by('-status')
     return render(request, 'manage/page_list.html', context)
 
-
+@staff_member_required
 def page_create(request):
     context = dict()
     context['title'] = "Page Create Form"
@@ -62,11 +63,11 @@ def page_create(request):
             messages.success(request, 'Birseyler eklendi')
     return render(request, 'manage/form.html', context)
 
-
+@staff_member_required
 def page_update(request, pk):
     context = dict()
     item = Page.objects.get(pk=pk)  # Show
-    context['title'] = f"{item.title} - PK: {item.pk} Carousel Edit Form"
+    context['title'] = f"{item.title} - PK: {item.pk} Page Edit Form"
     context['form'] = PageModelForm(instance=item)
     if request.method == 'POST':
         form = PageModelForm(request.POST, request.FILES, instance=item)
@@ -79,7 +80,7 @@ def page_update(request, pk):
             return redirect('page_update', pk)
     return render(request, 'manage/form.html', context)
 
-
+@staff_member_required
 def page_delete(request, pk):
     item = Page.objects.get(pk=pk)
     item.status = 'deleted'
@@ -88,13 +89,13 @@ def page_delete(request, pk):
 
 # Carousel:
 
-
+@staff_member_required
 def carousel_list(request):
     context = dict()
-    context['carousel'] = Carousel.objects.all().order_by('-pk')
+    context['carousel'] = Carousel.objects.all().order_by('-status')
     return render(request, 'manage/carousel_list.html', context)
 
-
+@staff_member_required
 def carousel_update(request, pk):
     context = dict()
     item = Carousel.objects.get(pk=pk)  # Show
@@ -108,7 +109,7 @@ def carousel_update(request, pk):
             return redirect('carousel_update', pk)
     return render(request, 'manage/form.html', context)
 
-
+@staff_member_required
 def carousel_create(request):
     context = dict()
     context['title'] = "Carousel Create Form"

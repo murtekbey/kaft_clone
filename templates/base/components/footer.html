@@ -1,25 +1,14 @@
 <div class="bg-dark py-5 mt-5">
     <div class="container">
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-sm-8">
-                <h3 class="text-light">Ürün Ozellikleri</h3>
-                <ul class="list-inline">
-                    <li class="list-inline-item">
-                        <a href="#">T-Shirt</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Bere</a>
-                    </li>
-                    <li class="list-inline-item">
-                        <a href="#">Canta</a>
-                    </li>
-                </ul>
+                <h3 class="text-light">Ürün Özellikleri</h3>
             </div>
             <div class="col-sm-4">
                 
                 <form class="form-inline">
                     <div class="form-group mx-sm-3 mb-2">
-                        <label for="ebulten" class="sr-only">E-Bulten</label>
+                        <label for="ebulten" class="sr-only">E-Bülten</label>
                         <input type="email" class="form-control" id="ebulten" placeholder="e-mail adresi">
                     </div>
                     <button type="submit" class="btn btn-dark mb-2">Kaydol</button>
@@ -32,7 +21,7 @@
         <div class="row">
             <div class="col-sm-2">
                 <h5 class="text-light">Erkek</h5>
-                <ul class="list-unstyled">
+                <ul class="list-unstyled list-group">
 
                     {% for item in categories %}
                     {% if item.gender == 'man' or item.gender == 'unisex' %}
@@ -43,7 +32,7 @@
                 </ul>
             </div>
             <div class="col-sm-2">
-                <h5 class="text-light">Kadin</h5>
+                <h5 class="text-light">Kadın</h5>
                 <ul class="list-unstyled">
 
                     {% for item in categories %}
@@ -75,7 +64,7 @@
                 <ul class="list-unstyled">
                     {% for item in pages %}
                     <li class="list-item">
-                        <a href="{% url 'page_show' slug=item.slug %}">
+                        <a href="{% url 'page_show' page_slug=item.slug %}">
                             {{ item.title }}
                         </a>
                     </li>
@@ -84,19 +73,19 @@
                 </ul>
             </div>
             <div class="col-sm-2">
-                <h5 class="text-light">Yardim</h5>
+                <h5 class="text-light">Yardım</h5>
                 <ul class="list-unstyled">
-                    <li><a href="">Consequatur, eius pariatur.</a></li>
-                    <li><a href="">Quaerat, reprehenderit quam.</a></li>
-                    <li><a href="">Harum, maxime eum.</a></li>
+                    <li><a href="#">Lorem ipsum dolor sit amet.</a></li>
+                    <li><a href="#">Quaerat, reprehenderit quam.</a></li>
+                    <li><a href="#">Harum, maxime eum.</a></li>
                 </ul>
             </div>
             <div class="col-sm-2">
                 <h5 class="text-light">Sosyal Medya</h5>
                 <ul class="list-unstyled text-white">
-                    <li><a href="" >Maxime, ullam iusto.</a></li>
-                    <li><a href="" >Voluptatum, vel voluptas.</a></li>
-                    <li><a href="" >Non, nemo omnis.</a></li>
+                    <li><a href="https://www.facebook.com/muboysgroup">Facebook</a></li>
+                    <li><a href="https://twitter.com/muboysgroup" >Twitter</a></li>
+                    <li><a href="https://www.instagram.com/muboysgroup/" >Instagram</a></li>
                 </ul>
             </div>
         </div>

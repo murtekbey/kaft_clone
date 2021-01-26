@@ -13,6 +13,7 @@
                         <th scope="col">Title</th>
                         <th scope="col">Cover Image</th>
                         <th scope="col">Action</th>
+                        <th scope="col">Status</th>
                     </tr>
                 </thead>
 
@@ -31,6 +32,7 @@
                         <td>
                             <a href="{% url 'carousel_update' item.pk %}" class="btn btn-primary">Edit</a>
                         </td>
+                        <td>{{ item.status }}</td>
                     </tr>
                     {% endfor %}
                 </tbody>

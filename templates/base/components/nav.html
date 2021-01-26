@@ -1,6 +1,6 @@
 <div class="bg-dark">
   <div class="container">
-    <nav class="navbar navbar-expand-lg navbar-dark ">
+    <nav class="navbar navbar-expand-lg navbar-dark">
       <a class="navbar-brand" href="{% url 'index' %}">
         Muboys
       </a>
@@ -54,6 +54,11 @@
 
             </div>
           </li>
+          {% if user.is_authenticated %}
+          <li class="nav-item active">
+            <a href="{% url 'manage_list' %}" class="nav-link">Manage</a>
+          </li>
+          {% endif %}
         </ul>
         <form class="form-inline my-2 my-lg-0">
           <input class="form-control mr-sm-2" type="text" placeholder='Senin İçin'>

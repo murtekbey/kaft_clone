@@ -13,7 +13,6 @@
                         <th scope="col">Title</th>
                         <th scope="col">Slug</th>
                         <th scope="col">Cover Image</th>
-                        <th scope="col">Content</th>
                         <th scope="col">Status</th>
                         <th scope="col">Action</th>
                     </tr>
@@ -32,7 +31,6 @@
                             Görsel Yok
                             {% endif %}
                         </td>
-                        <td>{{ item.content }}</td>
                         <td>{{ item.status }}</td>
                         <td>
                             <a href="{% url 'page_update' item.pk %}" class="btn btn-primary">Edit</a>

@@ -6,6 +6,9 @@
     <div class="row">
         <div class="col-12">
             <h2>{{ page.title }}</h2>
+            <span>
+                <article>{{ page.content }}</article>
+            </span>
             {% if page.cover_image %}
             <img src="{{ page.cover_image.url }}" alt="{{ page.title }}" class="w-100">
             {% endif %}
